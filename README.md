@@ -36,27 +36,22 @@ Ride a horse from the San Diego beach to New York across nine stages, awaken a S
 
 ### Without Rojo
 
-Recreate the folders below by hand. Each `.luau` file becomes a script named after the file with the suffix removed:
+Every top-level folder in this repository is named after the Studio service it belongs in, so the repository mirrors the Explorer:
 
-| File ends in | Create a |
+| Repository folder | Goes in Studio under |
 | --- | --- |
-| `.server.luau` | Script |
-| `.client.luau` | LocalScript |
-| `.luau` | ModuleScript |
+| `ReplicatedFirst` | ReplicatedFirst |
+| `ReplicatedStorage` | ReplicatedStorage |
+| `ServerScriptService` | ServerScriptService |
+| `StarterPlayer/StarterPlayerScripts` | StarterPlayer > StarterPlayerScripts |
 
-Each folder under `src` becomes a Folder with the same name, placed as follows:
+Inside those, recreate each subfolder as a Folder with the same name (for example ReplicatedStorage > Shared, or StarterPlayerScripts > UI > Tabs). Each `.luau` file becomes a script named after the file without its suffix, with the file's contents pasted into it:
 
-| Source | Studio location |
-| --- | --- |
-| `src/ReplicatedFirst/LoadingScreen.client.luau` | ReplicatedFirst > LoadingScreen (LocalScript) |
-| `src/ReplicatedStorage/Shared` | ReplicatedStorage > Shared |
-| `src/ReplicatedStorage/Builders` | ReplicatedStorage > Builders |
-| `src/ServerScriptService/Main.server.luau` | ServerScriptService > Main (Script) |
-| `src/ServerScriptService/Services` | ServerScriptService > Services |
-| `src/ServerScriptService/World` | ServerScriptService > World |
-| `src/StarterPlayerScripts/Client.client.luau` | StarterPlayer > StarterPlayerScripts > Client (LocalScript) |
-| `src/StarterPlayerScripts/Controllers` | StarterPlayer > StarterPlayerScripts > Controllers |
-| `src/StarterPlayerScripts/UI` | StarterPlayer > StarterPlayerScripts > UI, with a Tabs folder inside |
+| File ends in | Create a | Example |
+| --- | --- | --- |
+| `.server.luau` | Script | `ServerScriptService/Main.server.luau` becomes a Script named Main |
+| `.client.luau` | LocalScript | `StarterPlayer/StarterPlayerScripts/Client.client.luau` becomes a LocalScript named Client |
+| `.luau` | ModuleScript | `ReplicatedStorage/Shared/Config.luau` becomes a ModuleScript named Config |
 
 Then set the place properties from the table above yourself.
 
@@ -142,103 +137,103 @@ The interface follows a flat Western poster look: parchment and leather colors, 
 
 ```
 .
-├── default.project.json
+├── ReplicatedFirst
+│   └── LoadingScreen.client.luau
+├── ReplicatedStorage
+│   ├── Builders
+│   │   ├── HorseBuilder.luau
+│   │   ├── PartUtil.luau
+│   │   ├── RigBuilder.luau
+│   │   └── StandBuilder.luau
+│   └── Shared
+│       ├── Config.luau
+│       ├── HeightField.luau
+│       ├── HorseData.luau
+│       ├── HorseMotor.luau
+│       ├── ItemData.luau
+│       ├── Layout.luau
+│       ├── NPCData.luau
+│       ├── Progression.luau
+│       ├── QuestData.luau
+│       ├── Remotes.luau
+│       ├── Route.luau
+│       ├── Signal.luau
+│       ├── SkinData.luau
+│       ├── StandData.luau
+│       ├── Style.luau
+│       ├── Types.luau
+│       ├── Util.luau
+│       └── Zones.luau
+├── ServerScriptService
+│   ├── Services
+│   │   ├── CharacterService.luau
+│   │   ├── Combatants.luau
+│   │   ├── CombatService.luau
+│   │   ├── DataService.luau
+│   │   ├── Hitbox.luau
+│   │   ├── HorseService.luau
+│   │   ├── LevelService.luau
+│   │   ├── MasteryService.luau
+│   │   ├── Moves.luau
+│   │   ├── Net.luau
+│   │   ├── NPCBrain.luau
+│   │   ├── NPCService.luau
+│   │   ├── Projectiles.luau
+│   │   ├── PvPService.luau
+│   │   ├── QuestService.luau
+│   │   ├── RaceService.luau
+│   │   ├── ShopService.luau
+│   │   ├── Signals.luau
+│   │   ├── SkinService.luau
+│   │   └── StandService.luau
+│   ├── World
+│   │   ├── AtmosphereBuilder.luau
+│   │   ├── Landmarks.luau
+│   │   ├── MapBuilder.luau
+│   │   ├── PrefabsBuildings.luau
+│   │   ├── PrefabsNature.luau
+│   │   ├── PrefabsProps.luau
+│   │   ├── Scatter.luau
+│   │   ├── TerrainGen.luau
+│   │   ├── TownBuilder.luau
+│   │   └── TrailBuilder.luau
+│   └── Main.server.luau
+├── StarterPlayer
+│   └── StarterPlayerScripts
+│       ├── Controllers
+│       │   ├── AmbienceController.luau
+│       │   ├── CameraController.luau
+│       │   ├── FXController.luau
+│       │   ├── HorseAnimator.luau
+│       │   ├── HorseController.luau
+│       │   ├── InputController.luau
+│       │   ├── Joints.luau
+│       │   ├── RigAnimator.luau
+│       │   ├── StandAnimator.luau
+│       │   └── State.luau
+│       ├── UI
+│       │   ├── Tabs
+│       │   │   ├── Arena.luau
+│       │   │   ├── Mastery.luau
+│       │   │   ├── Quests.luau
+│       │   │   ├── Race.luau
+│       │   │   ├── Shop.luau
+│       │   │   ├── Skins.luau
+│       │   │   ├── Stable.luau
+│       │   │   ├── Stand.luau
+│       │   │   └── Stats.luau
+│       │   ├── Feed.luau
+│       │   ├── HorseHud.luau
+│       │   ├── Hud.luau
+│       │   ├── Kit.luau
+│       │   ├── Map.luau
+│       │   ├── Menu.luau
+│       │   ├── Prompts.luau
+│       │   ├── RaceHud.luau
+│       │   └── TameGame.luau
+│       └── Client.client.luau
 ├── README.md
-└── src
-    ├── ReplicatedFirst
-    │   └── LoadingScreen.client.luau
-    ├── ReplicatedStorage
-    │   ├── Builders
-    │   │   ├── HorseBuilder.luau
-    │   │   ├── PartUtil.luau
-    │   │   ├── RigBuilder.luau
-    │   │   └── StandBuilder.luau
-    │   └── Shared
-    │       ├── Config.luau
-    │       ├── HeightField.luau
-    │       ├── HorseData.luau
-    │       ├── HorseMotor.luau
-    │       ├── ItemData.luau
-    │       ├── Layout.luau
-    │       ├── NPCData.luau
-    │       ├── Progression.luau
-    │       ├── QuestData.luau
-    │       ├── Remotes.luau
-    │       ├── Route.luau
-    │       ├── Signal.luau
-    │       ├── SkinData.luau
-    │       ├── StandData.luau
-    │       ├── Style.luau
-    │       ├── Types.luau
-    │       ├── Util.luau
-    │       └── Zones.luau
-    ├── ServerScriptService
-    │   ├── Main.server.luau
-    │   ├── Services
-    │   │   ├── CharacterService.luau
-    │   │   ├── CombatService.luau
-    │   │   ├── Combatants.luau
-    │   │   ├── DataService.luau
-    │   │   ├── Hitbox.luau
-    │   │   ├── HorseService.luau
-    │   │   ├── LevelService.luau
-    │   │   ├── MasteryService.luau
-    │   │   ├── Moves.luau
-    │   │   ├── NPCBrain.luau
-    │   │   ├── NPCService.luau
-    │   │   ├── Net.luau
-    │   │   ├── Projectiles.luau
-    │   │   ├── PvPService.luau
-    │   │   ├── QuestService.luau
-    │   │   ├── RaceService.luau
-    │   │   ├── ShopService.luau
-    │   │   ├── Signals.luau
-    │   │   ├── SkinService.luau
-    │   │   └── StandService.luau
-    │   └── World
-    │       ├── AtmosphereBuilder.luau
-    │       ├── Landmarks.luau
-    │       ├── MapBuilder.luau
-    │       ├── PrefabsBuildings.luau
-    │       ├── PrefabsNature.luau
-    │       ├── PrefabsProps.luau
-    │       ├── Scatter.luau
-    │       ├── TerrainGen.luau
-    │       ├── TownBuilder.luau
-    │       └── TrailBuilder.luau
-    └── StarterPlayerScripts
-        ├── Client.client.luau
-        ├── Controllers
-        │   ├── AmbienceController.luau
-        │   ├── CameraController.luau
-        │   ├── FXController.luau
-        │   ├── HorseAnimator.luau
-        │   ├── HorseController.luau
-        │   ├── InputController.luau
-        │   ├── Joints.luau
-        │   ├── RigAnimator.luau
-        │   ├── StandAnimator.luau
-        │   └── State.luau
-        └── UI
-            ├── Feed.luau
-            ├── HorseHud.luau
-            ├── Hud.luau
-            ├── Kit.luau
-            ├── Map.luau
-            ├── Menu.luau
-            ├── Prompts.luau
-            ├── RaceHud.luau
-            ├── TameGame.luau
-            └── Tabs
-                ├── Arena.luau
-                ├── Mastery.luau
-                ├── Quests.luau
-                ├── Race.luau
-                ├── Shop.luau
-                ├── Skins.luau
-                ├── Stable.luau
-                ├── Stand.luau
-                └── Stats.luau
+└── default.project.json
 ```
 
 ## Notes

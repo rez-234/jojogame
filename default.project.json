@@ -25,21 +25,21 @@
     },
     "ReplicatedFirst": {
       "$className": "ReplicatedFirst",
-      "$path": "src/ReplicatedFirst"
+      "$path": "ReplicatedFirst"
     },
     "ReplicatedStorage": {
       "$className": "ReplicatedStorage",
-      "$path": "src/ReplicatedStorage"
+      "$path": "ReplicatedStorage"
     },
     "ServerScriptService": {
       "$className": "ServerScriptService",
-      "$path": "src/ServerScriptService"
+      "$path": "ServerScriptService"
     },
     "StarterPlayer": {
       "$className": "StarterPlayer",
       "StarterPlayerScripts": {
         "$className": "StarterPlayerScripts",
-        "$path": "src/StarterPlayerScripts"
+        "$path": "StarterPlayer/StarterPlayerScripts"
       }
     }
   }
